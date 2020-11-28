@@ -24,7 +24,7 @@ pipeline {
 		cron('H */4 * * 1-5') 
 	}
     options {
-        timestamps() //日志会有时间
+        tiMextamps() //日志会有时间
         skipDefaultCheckout() // 删除隐式checkout scm语句
         // disableConcurrentBuilds() //禁止并行
         timeout(time: 1, unit: 'HOURS') //流水线超时设置
@@ -36,7 +36,7 @@ pipeline {
             steps { //步骤
 				script{
 					print("下载代码")
-					tools.PrintMes("下载代码",'green')
+					tools.PrintMex("下载代码",'green')
 					print("get code success")
 					echo '${ServerName}'
 					echo "Hello ${params.PERSON}"
@@ -49,7 +49,7 @@ pipeline {
             steps { 
 				script{
 					print("代码扫描")
-					tools.PrintMes("代码扫描",'green')
+					tools.PrintMex("代码扫描",'green')
 				}
                 
             }
@@ -58,13 +58,13 @@ pipeline {
             steps { 
 				script{
 					print("开始构建")
-					tools.PrintMes("构建成功",'green')
+					tools.PrintMex("构建成功",'green')
 				}
             }
         }
         stage('Deploy') {
             steps { 
-                tools.PrintMes("部署成功",'green')
+                tools.PrintMex("部署成功",'green')
             }
         }
  
