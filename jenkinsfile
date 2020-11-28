@@ -38,7 +38,7 @@ pipeline {
 					print("下载代码")
 					tools.PrintMes("下载代码",'green')
 					print("get code success")
-					echo ${ServerName}
+					echo '${ServerName}'
 					echo "Hello ${params.PERSON}"
 					sh 'mvn --version'
 				}
