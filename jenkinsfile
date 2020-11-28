@@ -34,27 +34,32 @@ pipeline {
         //下载代码
         stage('GetCode') { //阶段名称
             steps { //步骤
-                sh 'echo "get code success"'
-                sh 'echo ${ServerName}'
-				echo "Hello ${params.PERSON}"
-				sh 'mvn --version'
+				script{
+					print("下载代码")
+					tools.PrintMes("下载代码",'green')
+					sh 'echo "get code success"'
+					sh 'echo ${ServerName}'
+					echo "Hello ${params.PERSON}"
+					sh 'mvn --version'
+				}
+                
             }
         }
         stage('CodeScan') { 
             steps { 
 				script{
 					print("代码扫描")
-					
-					tools.PrintMes("this is my lib",'green')
-					sh 'echo "Code Test success"'
+					tools.PrintMes("代码扫描",'green')
 				}
                 
             }
         }
         stage('CodeBuild') { 
             steps { 
-                sh 'echo "Code build success"'
-				hello()
+				script{
+					print("开始构建")
+					tools.PrintMes("构建成功",'green')
+				}
             }
         }
         stage('Deploy') {
