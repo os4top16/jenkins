@@ -1,7 +1,7 @@
 #!groovy
 
 String workspace = "/opt/workspace"
-@Library('jenkins') _
+@Library('jenkinslib') _
 
 def tools = new org.devops.tools()
 
@@ -43,7 +43,7 @@ pipeline {
         stage('CodeScan') { 
             steps { 
 				script{
-					print("代码扫描")
+					println("代码扫描")
 					tools.PrintMes("this is my lib")
 				}
                 sh 'echo "Code Test success"'
