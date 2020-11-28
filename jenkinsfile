@@ -64,23 +64,33 @@ pipeline {
         }
         stage('Deploy') {
             steps { 
-                tools.PrintMex("部署成功",'green')
+				script{
+						tools.PrintMex("部署成功",'green')
+					}
             }
         }
  
     }
     post { //完成时动作
         always {
-            print('流水线已经执行')
+			script{
+						print('流水线已经执行')
+					}
         }
         success {
+					script{
 						tools.PrintMex("流水线执行成功",'green')
+					}
         }
         failure {
+					script{
 						tools.PrintMex("流水线执行失败",'red')
+					}
         }
         unstable {
-            tools.PrintMex("流水线执行不稳定",'red')
+					script{
+						tools.PrintMex("流水线执行不稳定",'red')
+					}
         }
         changed {
             print('仅当管道的状态已更改时，此命令才能运行')
