@@ -1,7 +1,7 @@
 #!groovy
 
 String workspace = "/opt/workspace"
-@Library('jenkinslib') _
+@Library('jenkins') _
 
 def tools = new org.devops.tools()
 
