@@ -40,7 +40,7 @@ pipeline {
 					print "get code success"
 					print ${ServerName}
 					print "Hello ${params.PERSON}"
-					mvn --version
+					sh 'mvn --version'
 				}
                 
             }
