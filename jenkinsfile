@@ -37,10 +37,10 @@ pipeline {
 				script{
 					print("下载代码")
 					tools.PrintMes("下载代码",'green')
-					sh 'echo "get code success"'
-					sh 'echo ${ServerName}'
-					echo "Hello ${params.PERSON}"
-					sh 'mvn --version'
+					print "get code success"
+					print ${ServerName}
+					print "Hello ${params.PERSON}"
+					mvn --version
 				}
                 
             }
@@ -64,27 +64,27 @@ pipeline {
         }
         stage('Deploy') {
             steps { 
-                sh 'echo "deploy success"'
+                print("deploy success")
             }
         }
  
     }
     post { //完成时动作
         always {
-            echo '流水线已经执行'
+            print('流水线已经执行')
         }
         success {
-            echo '流水线执行成功'
+            print('流水线执行成功')
         }
         failure {
-            echo '流水线执行失败'
+            print('流水线执行失败')
         }
         unstable {
-            echo '流水线执行不稳定'
+            print('流水线执行不稳定')
         }
         changed {
-            echo '仅当管道的状态已更改时，此命令才能运行'
-            echo '例如，如果管道以前失败了，但现在成功了'
+            print('仅当管道的状态已更改时，此命令才能运行')
+            print('例如，如果管道以前失败了，但现在成功了')
         }
     }
 }
