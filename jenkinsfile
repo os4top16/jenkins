@@ -54,6 +54,7 @@ pipeline {
         stage('CodeBuild') { 
             steps { 
                 sh 'echo "Code build success"'
+				hello()
             }
         }
         stage('Deploy') {
