@@ -43,7 +43,8 @@ pipeline {
         stage('CodeScan') { 
             steps { 
 				script{
-					println("代码扫描")
+					print("代码扫描")
+					
 					tools.PrintMes("this is my lib")
 				}
                 sh 'echo "Code Test success"'
