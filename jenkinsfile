@@ -64,7 +64,7 @@ pipeline {
         }
         stage('Deploy') {
             steps { 
-                print("deploy success")
+                tools.PrintMes("部署成功",'green')
             }
         }
  
@@ -74,13 +74,13 @@ pipeline {
             print('流水线已经执行')
         }
         success {
-            print('流水线执行成功')
+						tools.PrintMex("流水线执行成功",'green')
         }
         failure {
-            print('流水线执行失败')
+						tools.PrintMex("流水线执行失败",'red')
         }
         unstable {
-            print('流水线执行不稳定')
+            tools.PrintMex("流水线执行不稳定",'red')
         }
         changed {
             print('仅当管道的状态已更改时，此命令才能运行')
