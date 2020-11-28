@@ -45,7 +45,7 @@ pipeline {
 				script{
 					print("代码扫描")
 					
-					tools.PrintMes("this is my lib")
+					tools.PrintMes("this is my lib",'green')
 					sh 'echo "Code Test success"'
 				}
                 
