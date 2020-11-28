@@ -36,7 +36,7 @@ pipeline {
             steps { //步骤
 				script{
 					print("下载代码")
-					tools.PrintMex("下载代码",'green')
+					tools.PrintMes("下载代码",'green')
 					print("get code success")
 					echo '${ServerName}'
 					echo "Hello ${params.PERSON}"
@@ -49,7 +49,7 @@ pipeline {
             steps { 
 				script{
 					print("代码扫描")
-					tools.PrintMex("代码扫描",'green')
+					tools.PrintMes("代码扫描",'green')
 				}
                 
             }
@@ -58,14 +58,14 @@ pipeline {
             steps { 
 				script{
 					print("开始构建")
-					tools.PrintMex("构建成功",'green')
+					tools.PrintMes("构建成功",'green')
 				}
             }
         }
         stage('Deploy') {
             steps { 
 				script{
-						tools.PrintMex("部署成功",'green')
+						tools.PrintMes("部署成功",'green')
 					}
             }
         }
@@ -79,17 +79,17 @@ pipeline {
         }
         success {
 					script{
-						tools.PrintMex("流水线执行成功",'green')
+						tools.PrintMes("流水线执行成功",'green')
 					}
         }
         failure {
 					script{
-						tools.PrintMex("流水线执行失败",'red')
+						tools.PrintMes("流水线执行失败",'red')
 					}
         }
         unstable {
 					script{
-						tools.PrintMex("流水线执行不稳定",'red')
+						tools.PrintMes("流水线执行不稳定",'red')
 					}
         }
         changed {
