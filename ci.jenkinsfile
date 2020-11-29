@@ -7,7 +7,7 @@ String buildShell = "${env.buildShell}"
 pipeline{
   agent{ node{ label 'master' }}
   stages{
-    stage("maven build"){
+    stage("build"){
       steps{
         script{
           build.Build(buildType,buildShell)
