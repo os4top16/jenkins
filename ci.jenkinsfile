@@ -39,6 +39,10 @@ pipeline{
         }
       }
     }
+    stage("webBuild"){
+      NpmHome = tool "NPM"
+      sh "${NpmHome}/bin/npm ${buildShell}"
+    }
   }
 
 }
