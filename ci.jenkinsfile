@@ -21,7 +21,7 @@ pipeline{
           try{
              antHome = tool "ANT"
              sh "${antHome}/bin/ant ${buildShell}"
-          }catche(e){
+          }catch(e){
             println(e)
           }
         }
@@ -33,7 +33,7 @@ pipeline{
           try{
             GradleHome = tool "Gradle"
             sh "${GradleHome}/bin/gradle ${buildShell}"
-          }catche(e){
+          }catch(e){
             println(e)
           }
         }
