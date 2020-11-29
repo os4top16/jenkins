@@ -43,7 +43,7 @@ pipeline{
       steps{
         script{
            NpmHome = tool "NodeJS"
-           sh "${NpmHome}/bin/npm ${buildShell}"   
+           sh "export NODE_HOME=/usr/local/node-v14.15.1-linux-x64 && export PATH=\$PATH:\$NODE_HOME/bin/&& \${NpmHome}/bin/npm ${buildShell}"
         }
       }
     }
