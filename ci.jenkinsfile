@@ -8,7 +8,7 @@ pipeline{
         script{
           try {
             mvnHome = tool "M2"
-            sh "${mvnHOME}/bin/mvn ${buildShell}"
+            sh "${mvnHome}/bin/mvn ${buildShell}"
           } catch(e){
             println(e)
           }
