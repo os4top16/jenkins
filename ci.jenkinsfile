@@ -19,6 +19,14 @@ pipeline{
         }
       }
     }
+    stag("GradleBuild"){
+      steps{
+        script{
+          GradleHome = tool "Gradle"
+          sh "${GradleHome}/bin/gradle ${buildShell}"
+        }
+      }
+    }
   }
 
 }
