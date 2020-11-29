@@ -23,7 +23,7 @@ pipeline{
         }
       }
     }
-    stag("GradleBuild"){
+    stage("GradleBuild"){
       steps{
         script{
           GradleHome = tool "Gradle"
