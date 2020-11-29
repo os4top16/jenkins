@@ -7,7 +7,7 @@ def Build(buildType,buildShell){
     println("当前选择的类型为 ${buildType}")
     buildHome = tool buildTools[buildType]
     
-    if ("${buildType == "npm"}"){
+    if ("${buildType}" == "npm"){
         sh """
         npmHome = tool "NodeJS"
         export NODE_HOME=/usr/local/node-v14.15.1-linux-x64
