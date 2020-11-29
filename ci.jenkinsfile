@@ -42,8 +42,8 @@ pipeline{
     stage("webBuild"){
       steps{
         script{
-           NpmHome = tool "NodeJS"
-           sh "export NODE_HOME=/usr/local/node-v14.15.1-linux-x64 && export PATH=\$PATH:\$NODE_HOME/bin/&& \${NpmHome}/bin/npm ${buildShell}"
+           npmHome = tool "NodeJS"
+           sh "export NODE_HOME=/usr/local/node-v14.15.1-linux-x64 && export PATH=\$PATH:\$NODE_HOME/bin/&& \${npmHome}/bin/npm ${buildShell}"
         }
       }
     }
