@@ -7,10 +7,13 @@ pipeline{
   }
   stages{
     stage("maven"){
-      script{
-        M2_HOME = '/usr/local/apache-maven-3.6.3'
-        sh '${M2_HOME}/bin/mvn -v'
+      steps{
+        script{
+          M2_HOME = '/usr/local/apache-maven-3.6.3'
+          sh '${M2_HOME}/bin/mvn -v'
+        }
       }
+      
     }
   }
 
