@@ -42,7 +42,7 @@ pipeline{
     stage("webBuild"){
       steps{
         script{
-           NpmHome = tool "NPM"
+           NpmHome = tool "NodeJS"
            sh "${NpmHome}/bin/npm ${buildShell}"   
         }
       }
