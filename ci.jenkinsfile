@@ -1,0 +1,17 @@
+#!groovy
+pipeline{
+  agent{
+    node{
+      label 'master'
+    }
+  }
+  stages{
+    stage{
+      script{
+        M2_HOME = '/usr/local/apache-maven-3.6.3'
+        sh '${M2_HOME}/bin/mvn -v'
+      }
+    }
+  }
+
+}
