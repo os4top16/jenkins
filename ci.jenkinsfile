@@ -6,16 +6,16 @@ pipeline{
     stage("maven build"){
       steps{
         script{
-          mvHome = tool 'M2'
-          sh '${mvHOME}/bin/mvn ${buildShell}'
+          mvHome = tool "M2"
+          sh "${mvHOME}/bin/mvn ${buildShell}"
         }
       }
     }
     stage("ant build"){
       steps{
         script{
-          antHome = tool 'ANT'
-          sh '${antHome}/bin/ant ${buildShell}'
+          antHome = tool "ANT"
+          sh "${antHome}/bin/ant ${buildShell}"
         }
       }
     }
